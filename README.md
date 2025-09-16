@@ -1,148 +1,212 @@
 # Python CLI Portfolio Tracker
+============================
 
 A command-line tool to track your stock portfolio and view key financial metrics using the Finnhub API.
 
----
+🚀 Quick Install & Use
+----------------------
 
-## ✨ Features
-
-* Track stock transactions (buy, sell, delete).
-* View a real-time portfolio summary with current market values.
-* Calculate both unrealized and realized profit/loss.
-* Fetch and display key financial metrics for any stock in a clean, categorized view.
-* Data is saved locally in simple `portfolio.json` and `stats.json` files.
-
----
-
-## 🚀 Getting Started
-
-Follow these instructions to get the project set up and running on your local machine.
+These instructions are for quickly installing and using the portfolio tracker as a command-line tool.
 
 ### Prerequisites
 
-* Python 3.8+
-* A free API key from **[Finnhub.io](https://finnhub.io)**
+-   Python 3.8+
 
-### Installation & Setup
+-   A free API key from [**Finnhub.io**](https://finnhub.io "null")
 
-1.  **Clone the repository** (or simply download the `api.py`, `portfolio.py`, and `main.py` files into a new directory).
+### Installation
 
-2.  **Create a `requirements.txt` file** in your project directory with the following content:
-    ```
-    typer[all]>=0.9.0
-    finnhub-python>=2.4.0
-    ```
+You can install the package directly from this repository using pip:
 
-3.  **Install the required packages** by running the following command in your terminal:
-    ```bash
-    pip install -r requirements.txt
-    ```
+```
+pip install git+[https://github.com/maelwalser/noiseless.git](https://github.com/maelwalser/noiseless.git)
 
-4.  **Set up your Finnhub API Key**
-    This tool requires a Finnhub API key to fetch stock data. You must store this key in an environment variable named **`FINNHUB_API_KEY`**.
+```
+
+### Setup
+
+1.  **Set up your Finnhub API Key** This tool requires a Finnhub API key to fetch stock data. You must store this key in an environment variable named **`FINNHUB_API_KEY`**.
 
     **On macOS/Linux:**
-    ```bash
-    export FINNHUB_API_KEY="YOUR_API_KEY_HERE"
+
     ```
+    export FINNHUB_API_KEY="YOUR_API_KEY_HERE"
+
+    ```
+
     *(To make this permanent, add the line above to your shell's startup file, such as `~/.zshrc` or `~/.bashrc`, then restart your terminal.)*
 
     **On Windows (Command Prompt):**
-    ```cmd
-    setx FINNHUB_API_KEY "YOUR_API_KEY_HERE"
+
     ```
+    setx FINNHUB_API_KEY "YOUR_API_KEY_HERE"
+
+    ```
+
     *(You will need to close and reopen your terminal for this change to take effect.)*
 
----
+### Commands & Usage
 
-## 💻 Commands & Usage
+Once installed, you can use the `money` command from your terminal.
 
-All commands are run from your terminal.
+|
 
-### `view`
+Command
 
-Displays a summary of all your holdings with current market values, unrealized P/L, and total realized P/L.
+ |
 
-```bash
-python main.py view
-```
+Description
 
-### add
+ |
+
+Example
+
+ |
+|
+
+`money view`
+
+ |
+
+Displays a summary of all your holdings.
+
+ |
+
+`money view`
+
+ |
+|
+
+`money add`
+
+ |
 
 Adds a new **buy** transaction to your portfolio.
 
-```bash
-python main.py add <TICKER> <SHARES> <PRICE>
+ |
+
+`money add AAPL 10 175.50 --date 2023-10-26`
+
+ |
+|
+
+`money sell`
+
+ |
+
+Records a **sell** transaction.
+
+ |
+
+`money sell AAPL 5 180.00`
+
+ |
+|
+
+`money stats`
+
+ |
+
+Fetches key financial metrics for a ticker.
+
+ |
+
+`money stats MSFT`
+
+ |
+|
+
+`money delete`
+
+ |
+
+Removes all transactions for a specific ticker.
+
+ |
+
+`money delete GOOGL`
+
+ |
+|
+
+`money reset`
+
+ |
+
+Resets the all-time realized profit/loss counter to zero.
+
+ |
+
+`money reset`
+
+ |
+|
+
+`money --help`
+
+ |
+
+To see all available commands and their options directly from the CLI.
+
+ |
+
+`money --help`
+
+ |
+
+🔧 Development Setup
+--------------------
+
+Follow these instructions to set up the project for development, allowing you to customize or contribute to it.
+
+### Prerequisites
+
+-   Python 3.8+
+
+-   A free API key from [**Finnhub.io**](https://finnhub.io "null")
+
+### Installation & Setup
+
+1.  **Clone the repository**
+
+    ```
+    git clone [https://github.com/maelwalser/noiseless.git](https://github.com/maelwalser/noiseless.git)
+    cd noiseless/noiseless-package
+
+    ```
+
+2.  **Create a `requirements.txt` file** in the `noiseless-package` directory with the following content:
+
+    ```
+    typer[all]>=0.9.0
+    finnhub-python>=2.4.0
+
+    ```
+
+3.  **Install the required packages** (it is recommended to do this in a virtual environment):
+
+    ```
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    pip install -r requirements.txt
+
+    ```
+
+4.  **Set up your Finnhub API Key** as described in the "Quick Install & Use" section.
+
+### Running from Source
+
+All commands are run from the `src` directory.
+
+```
+cd src
+python money_cli/main.py <command>
+
 ```
 
-`<TICKER>`: The stock symbol (e.g., AAPL)
+**Example:**
 
-`<SHARES>`: The number of shares purchased
-
-`<PRICE>`: The price per share
-
-Optional: Specify a past purchase date with the --date flag.
-
-Example: --date 2023-10-25
-
-Example:
-
-```bash
-python main.py add GOOGL 10 140.50 --date 2023-09-01
 ```
+python money_cli/main.py view
 
-### sell
-
-Records a sell transaction.
-This calculates the realized profit or loss based on the average cost of your holdings and updates your statistics.
-
-```bash
-python main.py sell <TICKER> <SHARES> <PRICE>
-```
-
-Example:
-
-```bash
-python main.py sell GOOGL 5 155.00
-```
-
-### stats
-
-Fetches and displays a categorized view of key financial metrics for any given ticker.
-
-```bash
-python main.py stats <TICKER>
-```
-
-Example:
-
-```bash
-python main.py stats MSFT
-```
-
-
-### delete
-
-Removes all transactions for a specific ticker from your portfolio.
-⚠️ This action is permanent and cannot be undone.
-
-```bash
-python main.py delete <TICKER>
-```
-
-### reset
-
-Resets the all-time realized profit/loss counter in stats.json back to zero.
-⚠️ This action is permanent.
-
-```bash
-python main.py reset
-```
-
-### Get Help
-
-To see all available commands and their options directly from the CLI:
-
-```bash
-python main.py --help
 ```
