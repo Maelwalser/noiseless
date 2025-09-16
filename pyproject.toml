@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "money-cli"
+version = "0.1.0"
+authors = [
+  { name="AAAAAAAAAAAA", email="maelwalser04@gmail.com" },
+]
+description = "A command-line tool to track your stock portfolio."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "typer[all]>=0.9.0",
+    "finnhub-python>=2.4.0",
+    "rich", # rich is a dependency of typer[all] but good to be explicit
+]
+
+[project.scripts]
+money = "money_cli.main:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]

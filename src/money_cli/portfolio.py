@@ -1,9 +1,18 @@
 import json
 from pathlib import Path
-from datetime import datetime # Added missing import
+from datetime import datetime
+import typer  # Import typer to get app dir
+import os     # Import os for path handling
 
-PORTFOLIO_FILE = Path("portfolio.json")
-STATS_FILE = Path("stats.json")
+# Get the cross-platform application directory for this tool
+APP_NAME = "money-cli"
+APP_DIR = Path(typer.get_app_dir(APP_NAME))
+APP_DIR.mkdir(parents=True, exist_ok=True) # Ensure the directory exists
+
+# Update file paths to point to the new app directory
+PORTFOLIO_FILE = APP_DIR / "portfolio.json"
+STATS_FILE = APP_DIR / "stats.json"
+
 
 def load_portfolio() -> list[dict]:
     """Loads the portfolio data from the JSON file."""

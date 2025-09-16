@@ -1,0 +1,2 @@
+[console_scripts]
+money = money_cli.main:app

@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+money_cli.egg-info/PKG-INFO
+money_cli.egg-info/SOURCES.txt
+money_cli.egg-info/dependency_links.txt
+money_cli.egg-info/entry_points.txt
+money_cli.egg-info/requires.txt
+money_cli.egg-info/top_level.txt

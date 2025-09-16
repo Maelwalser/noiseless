@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/money_cli/__init__.py
+src/money_cli/api.py
+src/money_cli/main.py
+src/money_cli/portfolio.py
+src/money_cli.egg-info/PKG-INFO
+src/money_cli.egg-info/SOURCES.txt
+src/money_cli.egg-info/dependency_links.txt
+src/money_cli.egg-info/entry_points.txt
+src/money_cli.egg-info/requires.txt
+src/money_cli.egg-info/top_level.txt
