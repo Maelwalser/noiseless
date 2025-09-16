@@ -65,3 +65,83 @@ Displays a summary of all your holdings with current market values, unrealized P
 
 ```bash
 python main.py view
+```
+
+### add
+
+Adds a new **buy** transaction to your portfolio.
+
+```bash
+python main.py add <TICKER> <SHARES> <PRICE>
+```
+
+TICKER: The stock symbol (e.g., AAPL)
+
+SHARES: The number of shares purchased
+
+PRICE: The price per share
+
+Optional: Specify a past purchase date with the --date flag.
+Example: --date 2023-10-25
+
+Example:
+
+```bash
+python main.py add GOOGL 10 140.50 --date 2023-09-01
+```
+
+### sell
+
+Records a sell transaction.
+This calculates the realized profit or loss based on the average cost of your holdings and updates your statistics.
+
+```bash
+python main.py sell <TICKER> <SHARES> <PRICE>
+```
+
+Example:
+
+```bash
+python main.py sell GOOGL 5 155.00
+```
+
+### stats
+
+Fetches and displays a categorized view of key financial metrics for any given ticker.
+
+```bash
+python main.py stats <TICKER>
+```
+
+Example:
+
+```bash
+python main.py stats MSFT
+```
+
+
+### delete
+
+Removes all transactions for a specific ticker from your portfolio.
+⚠️ This action is permanent and cannot be undone.
+
+```bash
+python main.py delete <TICKER>
+```
+
+### reset
+
+Resets the all-time realized profit/loss counter in stats.json back to zero.
+⚠️ This action is permanent.
+
+```bash
+python main.py reset
+```
+
+### Get Help
+
+To see all available commands and their options directly from the CLI:
+
+```bash
+python main.py --help
+```
