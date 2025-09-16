@@ -75,13 +75,14 @@ Adds a new **buy** transaction to your portfolio.
 python main.py add <TICKER> <SHARES> <PRICE>
 ```
 
-TICKER: The stock symbol (e.g., AAPL)
+`<TICKER>`: The stock symbol (e.g., AAPL)
 
-SHARES: The number of shares purchased
+`<SHARES>`: The number of shares purchased
 
-PRICE: The price per share
+`<PRICE>`: The price per share
 
 Optional: Specify a past purchase date with the --date flag.
+
 Example: --date 2023-10-25
 
 Example:
