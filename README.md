@@ -1,6 +1,4 @@
-Of course. Here is a comprehensive README.md file for your project. You can copy and paste this content directly into a new file named README.md in your project's root directory.
-
-Python CLI Portfolio Tracker
+# Python CLI Portfolio Tracker
 A command-line tool to track your stock portfolio and view key financial metrics using the Finnhub API.
 
 ✨ Features
