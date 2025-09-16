@@ -1,5 +1,4 @@
 # Python CLI Portfolio Tracker
-============================
 
 A command-line tool to track your stock portfolio and view key financial metrics using the Finnhub API.
 
