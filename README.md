@@ -49,110 +49,16 @@ pip install git+[https://github.com/maelwalser/noiseless.git](https://github.com
 
 Once installed, you can use the `money` command from your terminal.
 
-|
+| Command | Description | Example |
+| :--- | :--- | :--- |
+| `money view` | Displays a summary of all your holdings. | `money view` |
+| `money add` | Adds a new `buy` transaction to your portfolio. | `money add AAPL 10 175.50 --date 2023-10-26` |
+| `money sell` | Records a `sell` transaction. | `money sell AAPL 5 180.00` |
+| `money stats` | Fetches key financial metrics for a ticker. | `money stats MSFT` |
+| `money delete` | Removes all transactions for a specific ticker. | `money delete GOOGL` |
+| `money reset` | Resets the all-time realized profit/loss counter to zero. | `money reset` |
+| `money --help` | To see all available commands and their options directly from the CLI. | `money --help` |
 
-Command
-
- |
-
-Description
-
- |
-
-Example
-
- |
-|
-
-`money view`
-
- |
-
-Displays a summary of all your holdings.
-
- |
-
-`money view`
-
- |
-|
-
-`money add`
-
- |
-
-Adds a new **buy** transaction to your portfolio.
-
- |
-
-`money add AAPL 10 175.50 --date 2023-10-26`
-
- |
-|
-
-`money sell`
-
- |
-
-Records a **sell** transaction.
-
- |
-
-`money sell AAPL 5 180.00`
-
- |
-|
-
-`money stats`
-
- |
-
-Fetches key financial metrics for a ticker.
-
- |
-
-`money stats MSFT`
-
- |
-|
-
-`money delete`
-
- |
-
-Removes all transactions for a specific ticker.
-
- |
-
-`money delete GOOGL`
-
- |
-|
-
-`money reset`
-
- |
-
-Resets the all-time realized profit/loss counter to zero.
-
- |
-
-`money reset`
-
- |
-|
-
-`money --help`
-
- |
-
-To see all available commands and their options directly from the CLI.
-
- |
-
-`money --help`
-
- |
 
 🔧 Development Setup
 --------------------
