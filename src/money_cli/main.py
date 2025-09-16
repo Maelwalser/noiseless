@@ -5,10 +5,11 @@ from datetime import datetime
 from collections import defaultdict
 from rich.console import Console
 from rich.table import Table
-from rich.panel import Panel # Import Panel
+from rich.panel import Panel
 
-import portfolio
-import api
+# Corrected: Use relative imports to find modules within the same package
+from . import portfolio
+from . import api
 
 # Create the Typer app
 app = typer.Typer(
