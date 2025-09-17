@@ -1,8 +1,8 @@
 import json
 from pathlib import Path
 from datetime import datetime
-import typer  # Import typer to get app dir
-import os     # Import os for path handling
+import typer 
+import os   
 
 # Get the cross-platform application directory for this tool
 APP_NAME = "money-cli"

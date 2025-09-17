@@ -18,7 +18,7 @@ These instructions are for quickly installing and using the portfolio tracker as
 You can install the package directly from this repository using pip:
 
 ```
-pip install git+[https://github.com/maelwalser/noiseless.git](https://github.com/maelwalser/noiseless.git)
+pip install git+https://github.com/maelwalser/noiseless.git
 
 ```
 
